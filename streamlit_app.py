@@ -5,9 +5,7 @@ import requests
 
 # Write directly to the app
 st.title(f"Customize Your Smoothie! :cup_with_straw:")
-st.write(
-  """Choose the fruits you want in your custom Smoothie!
-  """)
+st.write("Choose the fruits you want in your custom Smoothie!")
 
 cnx = st.connection("snowflake")
 session = cnx.session()
@@ -44,4 +42,3 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success(f'Your Smoothie is ordered, {name_on_order}!', icon="✅")
-
